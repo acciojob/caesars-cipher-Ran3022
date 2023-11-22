@@ -34,8 +34,19 @@ const lookup = {
 function rot13(encodedStr) {
   let decodedArr = []; // Your Result goes here
   // Only change code below this line
+	for (let char of encodedStr) {
+    // Check if the character is in the lookup table
+    if (lookup[char] !== undefined) {
+      decodedArr.push(lookup[char]);
+    } else {
+      // If the character is not in the lookup table, push it unchanged
+      decodedArr.push(char);
+    }
+  }
 
-  return; //return decodedArr
+  return decodedArr.join("");
+
+  // return; //return decodedArr
 }
 
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
